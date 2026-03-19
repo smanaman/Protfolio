@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+
+
+.about-main {
+    width: 100%;
+    background: #0f0f0f;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    position: relative;
+    padding: 100px 0;
+
+}
+
+/* BACKGROUND LARGE TEXTS - Optimized to sit behind */
+.web-text {
+    font-size: 300px;
+    font-weight: 900;
+    color: transparent;
+ -webkit-text-stroke: 2px #00d2ff;
+     white-space: nowrap;
+    margin: 0;
+    line-height: 0.8;
+    z-index: 1; /* Wrapper se niche */
+    pointer-events: none;
+    margin-bottom: -150px; /* Overlap with wrapper */
+}
+
+.dev-text {
+    font-size: 300px;
+    font-weight: 900;
+    color: transparent;
+ -webkit-text-stroke: 2px #00d2ff;   
+  white-space: nowrap;
+    margin: 0;
+    line-height: 0.8;
+    align-self: flex-end;
+    z-index: 1; /* Wrapper se niche */
+    pointer-events: none;
+    margin-top: -150px; /* Overlap with wrapper */
+}
+
+/* ABOUT WRAPPER - Layered on TOP */
+.about-wrapper {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+    position: relative;
+    z-index: 10; /* Text ke upar dikhega content */
+    color: white;
+}
+
+.about-content-main {
+    width: 100%;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #00f2ea;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.tag .line {
+    width: 50px;
+    height: 2px;
+    background: #00f2ea;
+    box-shadow: 0 0 10px #00f2ea;
+}
+
+.main-quote {
+    font-size: clamp(35px, 5vw, 75px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 60px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #00f2ea, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0, 242, 234, 0.3);
+}
+
+.about-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.bio-text p {
+    font-size: 19px;
+    line-height: 1.8;
+    color: #bbb;
+}
+
+.bio-text strong {
+    color: #fff;
+    border-bottom: 1px dashed #00f2ea;
+}
+
+/* SKILLS CARDS UI */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.tech-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+}
+
+.tech-card:hover {
+    border-color: var(--hover-clr);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px -10px var(--hover-clr);
+}
+
+.icon-circle {
+    width: 55px;
+    height: 55px;
+    border-radius: 16px;
+    font-size: 26px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--hover-clr);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.tech-card span {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: #eee;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .about-split { grid-template-columns: 1fr; gap: 50px; }
+    .about-wrapper { padding: 0 20px; }
+    .main-quote { font-size: 40px; }
+}
+
+@media (max-width: 600px) {
+    .skills-container { grid-template-columns: 1fr; }
+    .web-text, .dev-text { font-size: 100px; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.84); }
+    .web-text { margin-bottom: -40px; }
+    .dev-text { margin-top: -40px; }
+}

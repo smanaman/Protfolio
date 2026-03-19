@@ -35,7 +35,7 @@ useGSAP(() => {
   });
 
   tl.from(".web-text", { 
-      x: isMobile ? -50 : -800,   // 🔥 reduce distance on mobile
+      x: isMobile ? -50 : -800,
       opacity: 0,
       duration: 1.5
     })
@@ -80,7 +80,7 @@ useGSAP(() => {
   return (
     <>
 
-      <section className="about-main" ref={container}>
+      <section id="about" className="about-main" ref={container}>
         {/* Background text upar wala */}
         <h1 className="web-text">Web</h1>
         

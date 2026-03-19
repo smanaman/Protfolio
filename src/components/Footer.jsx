@@ -56,7 +56,7 @@ const Footer = () => {
         <div className="footer-cta-content">
           <span className="cta-tag">HAVE A PROJECT IN MIND?</span>
           <h2>Let’s create something <span className="gradient-text">Extraordinary</span></h2>
-          <a href="mailto:hello@yourname.com" className="cta-btn">
+          <a href="#contact" className="cta-btn">
             Get in Touch <FaEnvelope />
           </a>
         </div>
@@ -74,7 +74,7 @@ const Footer = () => {
               immersive digital experiences with the modern tech stack.
             </p>
             <div className="social-links-footer">
-              <a href="#" className="social-circle"><FaGithub /></a>
+              <a href="https://github.com/smanaman" className="social-circle"><FaGithub /></a>
               <a href="#" className="social-circle"><FaLinkedinIn /></a>
               <a href="#" className="social-circle"><FaTwitter /></a>
               <a href="#" className="social-circle"><FaInstagram /></a>
@@ -85,11 +85,11 @@ const Footer = () => {
           <div className="footer-column">
             <h4>Navigation</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About Me</a></li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About Me</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
 
@@ -98,11 +98,11 @@ const Footer = () => {
             <h4>Contact Info</h4>
             <div className="contact-item">
               <FaEnvelope className="icon" />
-              <span>hello@maxelmorgan.com</span>
+              <span>amansanvat@gmail.com</span>
             </div>
             <div className="contact-item">
               <FaMapMarkerAlt className="icon" />
-              <span>Remote / Worldwide</span>
+              <span>Remote /On Side</span>
             </div>
             <div className="status-indicator">
               <span className="dot"></span>

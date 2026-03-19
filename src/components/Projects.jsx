@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react"; // useGSAP hook animation stability ke liye best hai
 import "./Projects.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -31,66 +32,75 @@ const projects = [
 
 const Projects = () => {
   const sectionRef = useRef(null);
-  const containerRef = useRef(null);
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      // Reveal Heading
-      gsap.from(".project-title", {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: ".project-title",
-          start: "top 90%",
-        },
-      });
+  useGSAP(() => {
+    // Refresh ScrollTrigger to ensure correct positions after component mounts
+    ScrollTrigger.refresh();
 
-      // Staggered Card Animation
-      gsap.from(".project-card", {
-        y: 150,
-        opacity: 0,
-        duration: 1.2,
-        stagger: 0.3,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: ".projects-grid",
-          start: "top 80%",
-        },
-      });
-    }, sectionRef);
+    // Reveal Heading
+    gsap.from(".project-title", {
+      y: 60,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".project-title",
+        start: "top 90%",
+        toggleActions: "play none none reverse",
+      },
+    });
 
-    return () => ctx.revert();
-  }, []);
+    // Staggered Card Animation - Added 'clearProps' to fix layout shift on refresh
+    gsap.from(".project-card", {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out",
+      clearProps: "all", // Animation khatam hone ke baad CSS reset kar dega taaki layout na bigde
+      scrollTrigger: {
+        trigger: ".projects-grid",
+        start: "top 85%",
+      },
+    });
+
+    // Background Text subtle movement
+    gsap.to(".bg-text-overlay", {
+      y: -30,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      }
+    });
+  }, { scope: sectionRef });
 
   return (
-    <section className="projects-section" ref={sectionRef}>
-      {/* Background Text (Connecting with your previous style) */}
+    <section id="projects" className="projects-section" ref={sectionRef}>
+      {/* Background Text Fixed for all screens */}
       <div className="bg-text-overlay">PROJECTS</div>
 
-      <div className="container" ref={containerRef}>
+      <div className="container">
         <h2 className="project-title">Selected <span>Works</span></h2>
         
         <div className="projects-grid">
           {projects.map((project) => (
             <div className="project-card" key={project.id}>
-              <div className="card-inner">
-                <div className="project-image">
-                  <img src={project.image} alt={project.title} />
-                  <div className="overlay">
-                    <button className="view-btn">View Case Study</button>
-                  </div>
+              <div className="project-image">
+                <img src={project.image} alt={project.title} loading="lazy" />
+                <div className="overlay">
+                  <button className="view-btn">View Case Study</button>
                 </div>
-                
-                <div className="project-info">
-                  <div className="tags">
-                    {project.tags.map((tag, i) => (
-                      <span key={i}>{tag}</span>
-                    ))}
-                  </div>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
+              </div>
+              
+              <div className="project-info">
+                <div className="tags">
+                  {project.tags.map((tag, i) => (
+                    <span key={i}>{tag}</span>
+                  ))}
                 </div>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
               </div>
             </div>
           ))}

@@ -20,33 +20,27 @@ const Navbar = () => {
         {/* Navigation */}
         <nav className="nav">
 
-          <a href="#">Home</a>
+          <a href="#hero">Home</a>
 
           <a href="#">About Me</a>
 
-          <a href="#" className="dropdown">
-            Services <ChevronDown size={16} />
+          <a href="#services" className="dropdown">
+            Services
           </a>
+          <a href="#projects">Projects</a>
 
-          <a href="#" className="dropdown">
-            Portfolio <ChevronDown size={16} />
-          </a>
-
-          <a href="#" className="dropdown">
-            Pages <ChevronDown size={16} />
-          </a>
-
-          <a href="#">Contact</a>
 
         </nav>
 
         {/* CTA Button */}
         <div className="cta">
 
-          <button className="start-btn">
+       <a href="#contact" style={{ textDecoration: 'none' }}>
+        <button className="start-btn">
             Start Project
             <ArrowRight size={18} />
           </button>
+        </a>   
 
         </div>
 

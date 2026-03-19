@@ -18,11 +18,10 @@ const Hero = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    // ✅ GSAP SAFE CONTEXT
     const ctx = gsap.context(() => {
 
       const tl = gsap.timeline({
-        delay: 0.2 // 🔥 ensures DOM ready after refresh
+        delay: 0.2 
       });
 
       tl.from(leftRef.current, {
@@ -42,7 +41,7 @@ const Hero = () => {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      ctx.revert(); // 🔥 cleanup
+      ctx.revert(); 
     };
 
   }, []);
@@ -51,6 +50,7 @@ const Hero = () => {
     <section
       ref={containerRef}
       className="hero"
+      id="hero"
       style={{
         filter: `brightness(${1 + scrollY * 0.0008})`
       }}
@@ -68,16 +68,18 @@ const Hero = () => {
 
           {/* RIGHT */}
           <div className="hero-right" ref={rightRef}>
-            <h2>Innovate. Develop. Succeed. Fast.</h2>
+            <h2>Full Stack Developer | MERN | Automation</h2>
 
             <p>
-              Transform your ideas into cutting-edge web solutions.
-              We craft high-performance websites and applications tailored
-              to your business.
+               I design and build scalable web applications using the MERN stack, 
+              focusing on performance, clean architecture, and real-world usability.
+              <br /><br />
+              I also integrate powerful automation workflows using n8n to reduce manual work 
+              and create intelligent, self-operating systems.
             </p>
 
             <div className="hero-buttons">
-              <a href="#" className="btn-quote">
+              <a href="#contact" className="btn-quote">
                 Get a Free Quote
               </a>
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './Contact.css';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Contact.css';
@@ -51,7 +51,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <section className="contact-section" ref={sectionRef}>
+    <section id='contact' className="contact-section" ref={sectionRef}>
       {/* Background Overlay Text */}
       <div className="bg-text-overlay">CONTACT</div>
 
@@ -78,7 +78,7 @@ const Contact = () => {
               <div className="icon-box"><Mail size={24} /></div>
               <div className="info-content">
                 <span>Email Me</span>
-                <p>hello@yourdomain.com</p>
+                <p>amansanvat@gmail.com</p>
               </div>
             </div>
 
@@ -86,7 +86,7 @@ const Contact = () => {
               <div className="icon-box"><Phone size={24} /></div>
               <div className="info-content">
                 <span>Call Me</span>
-                <p>+91 98765 43210</p>
+                <p>+91 95745 03240</p>
               </div>
             </div>
 
@@ -94,14 +94,14 @@ const Contact = () => {
               <div className="icon-box"><MapPin size={24} /></div>
               <div className="info-content">
                 <span>Location</span>
-                <p>Mumbai, Maharashtra, India</p>
+                <p>Amreli, Gujarat, India</p>
               </div>
             </div>
 
             <div className="social-links">
-               <a href="#"><Github /></a>
+               <a href="https://github.com/smanaman"><Github /></a>
                <a href="#"><Linkedin /></a>
-               <a href="#"><Twitter /></a>
+               <a href="#"><Instagram /></a>
             </div>
           </div>
 

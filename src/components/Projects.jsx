@@ -12,7 +12,7 @@ const projects = [
     title: "GlowLead",
     tags: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "REST API"],
     description: "Built a MERN-based lead generation system with secure authentication, REST APIs, and a dynamic dashboard for managing and tracking leads efficiently.",
-    image: "../public/image2.png",
+    image: "/image2.png",
     link: "https://growlead.vercel.app/"
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     title: "Industra",
     tags: ["React", "Node.js", "Express.js", "MongoDB", "REST API"],
     description: "Developed a MERN stack application to automate inventory, workflows, and reporting with real-time data handling and interactive dashboards.",
-    image: "../public/image1.png",
+    image: "/image1.png",
     link: "https://industra-jet.vercel.app/"
 
 
@@ -30,7 +30,7 @@ const projects = [
     title: "Personal Portfolio Website",
     tags: ["React", "GSAP", "JavaScript", "HTML", "CSS"],
     description: "Created a responsive portfolio with React and GSAP featuring smooth animations, modern UI, and optimized performance for better user engagement.",
-    image: "../public/image.png",
+    image: "/image.png",
     link: "https://protfolio-three-ashy.vercel.app/"
   },
 ];

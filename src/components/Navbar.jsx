@@ -12,8 +12,7 @@ const Navbar = () => {
         <div className="logo">
           <div className="logo-circle"></div>
           <div className="logo-text">
-            <span className="logo-main">Ma<span className="accent">X</span>el</span>
-            <span className="logo-sub">web agency</span>
+            <span className="logo-main">AM<span className="accent">A</span>N</span>
           </div>
         </div>
 

@@ -9,24 +9,29 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 1,
-    title: "Quantum E-Commerce",
-    tags: ["React", "Node.js", "MongoDB"],
-    description: "A high-performance e-commerce platform with real-time analytics.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1000",
+    title: "GlowLead",
+    tags: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "REST API"],
+    description: "Built a MERN-based lead generation system with secure authentication, REST APIs, and a dynamic dashboard for managing and tracking leads efficiently.",
+    image: "../public/image2.png",
+    link: "https://growlead.vercel.app/"
   },
   {
     id: 2,
-    title: "AI Dashboard",
-    tags: ["Python", "Next.js", "TensorFlow"],
-    description: "Neural network visualization tool for machine learning models.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
+    title: "Industra",
+    tags: ["React", "Node.js", "Express.js", "MongoDB", "REST API"],
+    description: "Developed a MERN stack application to automate inventory, workflows, and reporting with real-time data handling and interactive dashboards.",
+    image: "../public/image1.png",
+    link: "https://industra-jet.vercel.app/"
+
+
   },
   {
     id: 3,
-    title: "Crypto Vault",
-    tags: ["Solidity", "Web3.js", "Ether.js"],
-    description: "Secure decentralized finance application with multi-sig wallet.",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=1000",
+    title: "Personal Portfolio Website",
+    tags: ["React", "GSAP", "JavaScript", "HTML", "CSS"],
+    description: "Created a responsive portfolio with React and GSAP featuring smooth animations, modern UI, and optimized performance for better user engagement.",
+    image: "../public/image.png",
+    link: "https://protfolio-three-ashy.vercel.app/"
   },
 ];
 
@@ -82,17 +87,19 @@ const Projects = () => {
 
       <div className="container">
         <h2 className="project-title">Selected <span>Works</span></h2>
-        
+
         <div className="projects-grid">
           {projects.map((project) => (
             <div className="project-card" key={project.id}>
               <div className="project-image">
                 <img src={project.image} alt={project.title} loading="lazy" />
                 <div className="overlay">
+                                    <a href={project.link} target="_blank" rel="noopener noreferrer">
                   <button className="view-btn">View Case Study</button>
+                </a>
                 </div>
               </div>
-              
+
               <div className="project-info">
                 <div className="tags">
                   {project.tags.map((tag, i) => (

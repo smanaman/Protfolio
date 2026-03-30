@@ -68,7 +68,7 @@ const Footer = () => {
           
           {/* Column 1: Brand Info */}
           <div className="footer-column brand-col">
-            <h3 className="footer-logo">MAXEL<span>.</span></h3>
+            <h3 className="footer-logo">AMAN<span>.</span></h3>
             <p className="brand-desc">
               Building high-performance autonomous systems and 
               immersive digital experiences with the modern tech stack.
